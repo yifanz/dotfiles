@@ -117,3 +117,15 @@ syntax enable
 "let g:ctrlp_max_files=0
 "let g:ctrlp_max_depth=40
 "let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
+
+" Put quickfix list items in args
+" http://stackoverflow.com/questions/5686206/search-replace-using-quickfix-list-in-vim
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(values(buffer_numbers))
+endfunction
