@@ -2,12 +2,13 @@
 # https://www.linux.com/learn/intro-to-linux/finding-interesting-documents-grep
 # Params
 #   $1 - search string
-C_FIND() {
+rgsrc() {
     if [ $# -lt 1 ]; then
-        echo "RGSRC: Needs argument"
-        echo "usage: RGSRC <string to search for>"
+        echo "rgsrc: Needs argument"
+        echo "usage: rgsrc <pattern to search for>"
         return 1
     fi
-    find . \( -name "*.hh" -o -name "*.cpp" -o -name "*.hpp" -o -name "*.h" -o -name "*.c" \) \
+    find . \( -name "*.hh" -o -name "*.cpp" -o -name "*.hpp" -o -name "*.h" -o -name "*.c" -o -name "*.m" \
+        -o -name "*.sh" -o -name "Makefile" \) \
         -exec grep -Hn "$1" {} +
 }
