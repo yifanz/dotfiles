@@ -114,7 +114,10 @@ syntax enable
 "  color phd
 "endif
 
-"let g:ctrlp_max_files=0
+"$ cd ~/.vim
+"$ git clone https://github.com/ctrlpvim/ctrlp.vim.git bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files=10000
 "let g:ctrlp_max_depth=40
 "let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 
