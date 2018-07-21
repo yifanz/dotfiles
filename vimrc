@@ -29,16 +29,19 @@ nnoremap <silent> <Leader>rts :call RemoveTrailingSpaces()<CR>
 autocmd BufWritePre * :call RemoveTrailingSpaces()
 
 " number of spaces for existing tabs
-set tabstop=4
+"set tabstop=4
+set tabstop=2
 
 " number of spaces for indent
-set shiftwidth=4
+"set shiftwidth=4
+set shiftwidth=2
 
 " use spaces instead of tabs
 set expandtab
 
 " number of space for when you hit tab
-set softtabstop=4
+"set softtabstop=4
+set softtabstop=2
 
 " Don't wrap lines
 "set nowrap
