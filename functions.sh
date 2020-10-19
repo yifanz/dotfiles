@@ -12,3 +12,8 @@ rgsrc() {
         -o -name "*.sh" -o -name "Makefile" \) \
         -exec grep -Hn "$1" {} +
 }
+
+# Keep computer awake for 8 hours
+stay_awake() {
+    caffeinate -d -u -i -s -t 28800 &
+}
